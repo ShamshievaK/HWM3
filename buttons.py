@@ -7,5 +7,11 @@ mem_buttons = KeyboardButton('/mem')
 mem_all_buttons = KeyboardButton('/mem_all')
 music_buttons = KeyboardButton('/music')
 file_buttons = KeyboardButton('/file')
+quiz_buttons = KeyboardButton('/quiz')
 
-start.add(start_buttons, mem_buttons, mem_all_buttons, music_buttons, file_buttons)
+
+
+
+
+
+start.add(start_buttons, mem_buttons, mem_all_buttons, music_buttons, file_buttons, quiz_buttons)
