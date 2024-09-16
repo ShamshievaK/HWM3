@@ -15,3 +15,8 @@ quiz_buttons = KeyboardButton('/quiz')
 
 
 start.add(start_buttons, mem_buttons, mem_all_buttons, music_buttons, file_buttons, quiz_buttons)
+
+
+cancel_button = ReplyKeyboardMarkup(resize_keyboard=True).add(KeyboardButton('Отмена'))
+submit_button = ReplyKeyboardMarkup(resize_keyboard=True,
+                                    row_width=2).add(KeyboardButton('Да'), KeyboardButton('Нет'))
