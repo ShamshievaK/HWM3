@@ -1,7 +1,7 @@
 import sqlite3
 from db import  queries
 
-db = sqlite3.connect('db.sqlite3')
+db = sqlite3.connect('db/store.sqlite3')
 cursor = db.cursor()
 
 
@@ -10,6 +10,7 @@ async def sql_create():
         print('База данных подключена!')
 
     cursor.execute(queries.CREATE_TABLE_PRODUCTS)
+    cursor.execute(queries.CREATE_TABLE_PRODUCTS_DETAIL)
     db.commit()
 
 
@@ -21,4 +22,8 @@ async def sql_insert_products(name_product, size, price, product_id, photo):
         product_id,
         photo
     ))
+    db.commit()
+
+async def insert_product_detail(product_id, category, info_product):
+    cursor.execute(queries.INSERT_INTO_PRODUCT_DETAIL(product_id, category, info_product))
     db.commit()
