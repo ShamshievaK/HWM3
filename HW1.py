@@ -2,7 +2,7 @@ import logging
 from aiogram.utils import executor
 from buttons import start_test
 from config import bot, dp, admin
-from handlers import commands, echo, quiz, FSM_reg
+from handlers import commands, echo, quiz, FSM_reg, webapp, admin_group
 from db import db_main
 
 # async def on_startup(_):
@@ -18,8 +18,11 @@ async def on_startup(_):
 commands.register_commands(dp)
 quiz.register_quiz(dp)
 FSM_reg.register_store(dp)
+webapp.register_handlers_webapp(dp)
+admin_group.register_admin_group(dp)
 
-echo.register_echo(dp)
+
+# echo.register_echo(dp)
 
 
 if __name__ == '__main__':
